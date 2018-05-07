@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>koa-passport example</title>
+</head>
+<body>
+  <form action="/login" method="post">
+    <input type="hidden" name="_csrf" value="{csrfToken}"/>
+    <p>
+      <label>Username:
+        <input type="text" name="username" value="" />
+      </label>
+    </p>
+    <p>
+        <label>Email:
+          <input type="email" name="email" value="" />
+        </label>
+      </p>
+    <p>
+      <label>Password:
+        <input type="password" name="password" value="" />
+      </label>
+    </p>
+    <p>
+      <button type="submit">Log Up</button>
+    </p>
+  </form>
+</body>
+</html>
