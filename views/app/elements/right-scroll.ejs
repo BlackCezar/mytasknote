@@ -1,0 +1,117 @@
+<style>
+    .right__scroll {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 250px;
+        box-shadow: 0px 0px 8px #0000009c;
+        height: 100%;
+        background-color: rgb(79, 89, 100);
+    }
+    .right__scroll__header {
+        background-color: rgba(151, 183, 158, 0.68);
+        width: 230px;
+        text-align: center;
+        text-shadow: 1px 1px 3px #3b6546;
+        color: whitesmoke; 
+        font-size: large;
+        padding: 10px 10px;
+    }
+    .right__scroll__content {
+        display: flex;
+        height: calc(100% - 20px);
+        padding: 10px 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .right__scroll__blocks {
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    .right__scroll__block {
+        background-color: rgb(61, 68, 77);
+        padding: 5px 10px;
+        width: 200px;
+        margin-bottom: 15px;
+    }
+    .right__scroll__more {
+        background-color: rgba(222, 192, 93, 0.59);
+        font-size: large;
+        padding: 5px 0;
+        margin-top: 20px;
+        color: whitesmoke;
+        border: 0;
+        border-radius: 2px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        min-height: 30px;
+        overflow: hidden;
+        outline: rgb(193, 163, 62);
+        transition: all 0.4s ease-in-out;
+        text-align: center;
+        font-family: PoiretOne-Regular;
+        width: 220px
+    }
+    .right__scroll__more:hover {
+        background-color: rgb(193, 163, 62);
+    }
+
+</style>
+<div class="right__scroll">
+    <div class="right__scroll__header">Сегодня
+    </div>
+    <div class="right__scroll__content">
+        <div class="right__scroll__blocks">
+        </div>
+        <button type="button" class="right__scroll__more"><i class="fa fa-angle-down"></i> Еще</button>
+    </div>
+   
+</div>
+<script>
+ 
+    let countData = new Date().getDate();
+    let countMonth = new Date().getMonth();
+    let countDay = new Date().getDay();
+    let btn = document.querySelector('.right__scroll__more');
+    let days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда','Четверг', 'Пятница', 'Суббота'];
+    btn.onclick = function() {
+        
+        more();
+    }
+    more();
+    document.querySelector('.right__scroll__header').innerHTML = `Cегодня - ${new Date().getDate()}.${new Date().getMonth()}.${new Date().getFullYear()}`;
+    
+    
+    function more() {
+        for (let i=0; i<9; i++) {
+            let block = document.createElement('div');
+            block.className = 'right__scroll__block';
+            block.innerHTML = `<div class="right__scroll__data">${countData}.${countMonth}.${new Date().getFullYear()}</div>
+                <div class="right__scroll__day">${days[countDay]}</div>`;
+            document.querySelector('.right__scroll__blocks').appendChild(block);
+            countDay++;
+            if (countDay == 7) {
+                countDay = 0;
+            }
+            if (countData <= daysOnMounth(countMonth)) {
+                countData++;
+            } else {
+                countData = 1;
+                countMonth++;
+            }   
+        }
+    }
+    function daysOnMounth (mount) {
+        if (mount == 4 || mount == 6 || mount == 9 || mount == 11) {
+            return 30;
+        }
+        if (mount == 2) {
+            if ((new Date().getFullYear % 4 )== 0) {
+            return 29;
+        } else return 28;
+        }
+        return 31;
+    }
+</script>

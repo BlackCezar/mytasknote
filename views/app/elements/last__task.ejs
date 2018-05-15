@@ -1,0 +1,88 @@
+<style>
+    .last__task {
+        background-color: rgb(73, 67, 67);
+        font-size: 1.2em;
+        height: fit-content;
+        padding-bottom: 10px;
+        height: 40vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .left__content {
+        padding: 10px 20px;
+    }
+    .right__content {
+        padding: 10px 20px;
+        text-align: right;
+    }
+    .last__task__header {
+        display: flex;
+        font-size: 1.5em;
+        justify-content: space-between;
+        background-color: rgba(146, 89, 89, 0.712);
+    }
+    .last__task__content__header {
+        font-size: larger;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 5px;
+        border-bottom: 1px dashed rgba(31, 20, 20, 0.712);
+    }
+    .last__task__content__desc {
+        padding: 5px 10px;
+        margin-bottom: 20px;
+    }
+    .last__task__content__desc::first-letter {
+        font-size: xx-large;
+        color: white;
+    }
+   
+    .last__task_link {
+        display: block;
+        background-color: rgba(89, 146, 97, 0.712);
+        font-size: large;
+        margin-left: 20px;
+        padding: 10px 40px;
+        color: whitesmoke;
+        border-radius: 2px;
+        width: fit-content;
+        cursor: pointer;
+        outline: rgba(89, 146, 97, 0.712);
+        transition: all 0.4s ease-in-out;
+    }
+    .last__task_link:hover {
+        background-color: rgba(112, 180, 121, 0.712);
+    }
+</style>
+<div class="last__task">
+    <div class="last__task__header">
+        <div class="left__content">
+            Активная задача
+        </div>
+        <div class="right__content">12.2.2003</div>
+    </div>
+    <div class="last__task__content">
+            <div class="last__task__content__header">
+                <div class="left__content">Подмести везде</div>
+                <div class="right__content">Мои задачи</div>
+            </div>
+            <div class="last__task__content__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas in, eaque debitis corrupti impedit consequatur architecto enim. Architecto, accusantium hic, suscipit, quidem tempora possimus modi expedita iste reprehenderit repellat aut!</div>
+            <a class="last__task_link">Перейти</a>
+    </div>
+  </div>
+
+  <script>
+      document.querySelectorAll('.task__li').forEach((el) => {
+          if (el.dataset.status == 'completed') {
+              el.childNodes[0].className = 'fa fa-check-square';
+              el.style.borderLeftStyle = 'solid';
+          }
+      });
+      
+      let elem = document.querySelector('.last__task__content__desc');
+      if (elem.innerText.length > 160) {
+          let text = elem.innerText.substr(0, 160);
+          console.log(text);
+          elem.innerText = text + '...';
+      }
+  </script>

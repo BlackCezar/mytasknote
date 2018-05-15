@@ -1,0 +1,110 @@
+<style media="screen">
+        .left__menu a {
+            text-decoration-line: none;
+        }
+        .left__menu {
+            background-color: rgba(26, 33, 27, 0.82);
+            font-size: large;
+            overflow-y: auto;
+            min-width: 250px;
+            box-shadow: 1px 0px 8px #0000009c;
+            z-index: 1;
+            overflow-x: hidden;
+        }
+        .left__menu__me {
+            padding: 10px 0px 10px 5px;
+            width: calc(100% - 5px);
+            text-shadow: 1px 1px 3px #3b6546;
+            color: whitesmoke; 
+            background-color: rgba(151, 183, 158, 0.68);
+        }
+        .left__menu__me:hover {
+            background-color: rgb(106, 173, 120);
+            color: #fafafa;
+        }
+        .left__menu ul {
+            list-style-type: none;
+        }
+        .left__menu__item_header {
+            color: whitesmoke !important;
+            padding: 10px 5px;
+            text-shadow: 1px 1px 3px #313126;
+            background-color: rgba(222, 192, 93, 0.59);
+        }
+        .left__menu__item_header:hover {
+            background-color: rgb(193, 163, 62);
+            color: #fafafa !important;
+        }
+        .left__menu__items_content {
+           padding-left: 10px;
+        }
+        .left__menu__item_link {
+            color: rgba(255, 255, 255, 0.932) !important;
+            padding: 2.5px 0;
+        }
+        .left__menu__item_link:hover {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+    </style>
+    <main class="left__menu">
+        <div class="left__menu__body">
+            <a href="/stub">
+                <div class="left__menu__me">
+                    <i class="fa fa-user-circle fa-fw" ></i><span class="text"> Моя страница</span>
+                </div>
+            </a>
+            <ul class="left__menu__items_content">
+                <a href="/stub">
+                    <li class="left__menu__item_link">
+                        <i class="fa fa-envelope  fa-fw"></i><span class="text"> Сообщения</span></li>
+                </a>
+                <a href="/stub">
+                    <li class="left__menu__item_link">
+                        <i class="fa fa-bell  fa-fw"></i><span class="text"> Оповещения</span></li>
+                </a>
+                <a href="/stub">
+                    <li class="left__menu__item_link">
+                        <i class="fa fa-comments  fa-fw"></i><span class="text"> Чат организации</span></li>
+                </a>
+                <a href="/stub">
+                    <li class="left__menu__item_link">
+                        <i class="fa fa-edit  fa-fw"></i><span class="text"> Редактировать данные</span></li>
+                </a>
+            </ul>
+    
+            <ul class="left__menu__items">
+                <a href="/org"><li class="left__menu__item_header"><i class="fa fa-copyright  fa-fw"></i><span class="text"> Моя организация</span></li></a>
+                <ul class="left__menu__items_content">
+                    <a href="/stub"><li class="left__menu__item_link"><i class="fa fa-suitcase  fa-fw"></i><span class="text"> Основные данные</span></li></a>
+                    <a href="/stub"><li class="left__menu__item_link"><i class="fa fa-users  fa-fw"></i><span class="text"> Структура</span></li></a>
+                    <a href="/stub"><li class="left__menu__item_link"><i class="fa fa-cogs  fa-fw"></i><span class="text"> Параметры организации</span></li></a>
+                </ul>
+                <a href="/stub">
+                    <li class="left__menu__item_header">
+                        <i class="fa fa-tasks  fa-fw"></i><span class="text"> Мои задачи</span></li>
+                </a>
+                <ul class="left__menu__items_content">
+                    <a href="/stub">
+                        <li class="left__menu__item_link">
+                            <i class="fa fa-square  fa-fw"></i><span class="text"> Не завершенные</span></li>
+                    </a>
+                    <a href="/stub">
+                        <li class="left__menu__item_link">
+                            <i class="fa fa-check-square  fa-fw"></i><span class="text"> Завершенные</span></li>
+                    </a>
+                    <a href="/stub">
+                        <li class="left__menu__item_link">
+                            <i class="fa fa-bookmark  fa-fw"></i><span class="text"> Важные</span></li>
+                    </a>
+                    <a href="/stub">
+                        <li class="left__menu__item_link">
+                            <i class="fa fa-file  fa-fw"></i><span class="text"> Документы</span></li>
+                    </a>
+                </ul>
+                <a href="/stub">
+                    <li class="left__menu__item_header">
+                        <i class="fa fa-wrench  fa-fw"></i><span class="text"> Настройки</span></li>
+                </a>
+            </ul>
+        </div>
+    </main>

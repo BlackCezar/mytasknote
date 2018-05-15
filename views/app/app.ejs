@@ -3,10 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>koa-passport example</title>
+  <title>myTaskNote|Задачи</title>
+  <link rel="shortcut icon" href="../public/assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../public/assets/css/app.css">
+  <link rel="stylesheet" href="../../public/assets/css/fontawesome-all.min.css">
 </head>
 <body>
-  <h1>App</h1>
-  <p>You are authenticated ... <a href="/logout">logout</a></p>
+    <%- include('../elements/loader'); %>
+  <div class="main">
+      
+    <div class="main__content">
+        <%- include('elements/left-menu'); %>
+        <div class="main__content__container">
+            <%- include('elements/last__task'); %>
+            <%- include('elements/task__dashboards'); %>
+        </div>
+    </div>
+    <%- include('elements/right-scroll'); %>
+  </div>
 </body>
 </html>

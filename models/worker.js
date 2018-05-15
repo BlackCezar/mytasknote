@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const userSchema = new mongoose.Schema({
+const workerSchema = new mongoose.Schema({
   username: String,
   type: {
     type: String,
@@ -10,12 +10,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: String
   },
-  workers: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Workers',
-  }],
   boss: String,
   password: String
 })
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('Worker', workerSchema)

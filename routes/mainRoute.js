@@ -1,8 +1,9 @@
 const serv = require('../server')
 
+
 async function get(ctx) {
     ctx.set('Content-Type', 'text/html')
-    await ctx.render('login')
+    await ctx.render('main')
 }
 async function post (ctx, next) {
     console.log(ctx.request.body)

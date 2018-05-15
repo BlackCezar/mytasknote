@@ -1,11 +1,13 @@
 require('dotenv').config()
 const passport = require('koa-passport'),
       User = require('./models/user.js'),
+      Project = require('./models/project'),
       mongoose = require('mongoose'),
       env = process.env
+mongoose.Promise = global.Promise;
 // Подключение к БД
 try {
-  mongoose.connect(env.DB_URL, {useMongoClient: true}, () => {
+  mongoose.connect(env.DB_URL, () => {
   console.log('Connected to Mongodb')
   })
   mongoose.set('debug', true)
@@ -41,3 +43,4 @@ passport.deserializeUser(function(id, done) {
       : done(null,user)
   });
 });
+module.exports = mongoose;

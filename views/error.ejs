@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%= options.title %></title>
+    <link rel="stylesheet" href="../public/assets/css/error.css">
+    <link rel="shortcut icon" href="../public/assets/favicon.ico" type="image/x-icon">
+    <title>myTaskNote|<%= options.title %></title>
 </head>
 <body>
+    <div class="error">
+        <div class="error__header">
+            Упс, что-то пошло не так..
+        </div>
+        <div class="error__content">
+            <div class="error__content__title">Ошибка:</div>
+            <div class="error__content__msg"><%= msg %></div>
+        </div>
+    </div>
     <div class="status__code"><%= err %></div>
-    <h1><%= msg %></h1>
+    <div class="error__line"></div>
+    <div class="error__line_two"></div>
 </body>
 </html>

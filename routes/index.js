@@ -7,13 +7,20 @@ const mainRoute = require('./mainRoute'),
       error = require('./errorRoute'),
       auth = require('./authRoute')(passport),
       appRoute = require('./appRoute')
+      projectRoute = require('./projectRoute')(passport),
+      orgRoute = require('./orgRoute')
 
 router.get('/', mainRoute.get)
 router.post('/', mainRoute.post)
-router.get('/logout', auth.logout)
+router.get('/auth/logout', auth.logout)
 router.get('/app', appRoute.get)
-router.get('/reg', auth.regGet)
-router.post('/reg', auth.regPost)
+router.get('/auth/reg', auth.regGet)
+router.post('/auth/reg', auth.regPost)
+router.post('/app/projects/create', projectRoute.createProject)
+router.get('/app/projects/:id/remove', projectRoute.removeProject)
+router.get('/stub', error.stub)
+router.get('/org', orgRoute.get)
+
 // Обработка ошибок
 app.use(async (ctx, next) => {
   try {
